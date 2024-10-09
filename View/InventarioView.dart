@@ -3,7 +3,7 @@ import 'dart:io';
 import '../Model/Producto.dart';
 
 class Inventarioview {
-  //Funcion que muestra al usuario las opciones del programa
+  //Metodo que muestra al usuario las opciones del programa
   void menuInventario() {
     print('\n ----------------- Menu Inventario -----------------');
     print('1. Agregar Producto');
@@ -25,12 +25,12 @@ class Inventarioview {
     }
   }
 
-  // Funcion que muestra por consolo un mensaje al usuario
+  // Metodo que muestra por consolo un mensaje al usuario
   void mensaje(String texto) {
     print(texto);
   }
 
-  //Funcion que muestra todos los productos registrados
+  //Metodo que muestra todos los productos registrados
   void listarProductos(List<Producto> inventario) {
     if (inventario.isEmpty) {
       mensaje('No hay productos en el inventario');
@@ -42,7 +42,7 @@ class Inventarioview {
     }
   }
 
-  //Esta funcion nos ayuda a determinar si el usuario desea continuar agregando, actualizando o buscando
+  //Este metodo nos ayuda a determinar si el usuario desea continuar agregando, actualizando o buscando
   bool preguntaContinuar(String mensaje) {
     var respuesta = '';
     do {
