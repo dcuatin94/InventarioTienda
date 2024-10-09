@@ -4,17 +4,19 @@ import '../View/CategoriaView.dart';
 import '../View/InventarioView.dart';
 
 class Inventariocontroller {
+  // Iniciamos un
   List<Producto> productos = [];
   int producto_id = 0;
   Inventarioview vista;
   Inventariocontroller(this.vista);
+  // Creamos una lista de categorias
   List<Categoria> categorias = [
     Categoria(id: 1, nombre: 'Electrónica'),
     Categoria(id: 2, nombre: 'Accesorios'),
     Categoria(id: 3, nombre: 'Ropa'),
     Categoria(id: 4, nombre: 'Hogar'),
   ];
-
+  //Funcion para agregar Productos a la lista
   void agregarProducto() {
     bool continuar = true;
     Categoriaview categoriaview = Categoriaview();
@@ -38,6 +40,7 @@ class Inventariocontroller {
     }
   }
 
+  //Funcion para actualizar el stock
   void actualizarProducto() {
     bool continuar = true;
     if (productos.length > 0) {
@@ -63,10 +66,12 @@ class Inventariocontroller {
     }
   }
 
+  //Mostrar todos los productos ingresados
   void listarProductos() {
     vista.listarProductos(productos);
   }
 
+  //Buscar productos por nombre que inicien con
   void buscarProducto() {
     bool continuar = true;
     while (continuar) {
@@ -84,12 +89,14 @@ class Inventariocontroller {
     }
   }
 
+  //Medoto que calcula el valor total del inventario
   void totalInventario() {
     double total = productos.fold(
         0, (total, producto) => total + (producto.precio * producto.stock));
     vista.mensaje('\nValor total del inventario: [\$${total}]');
   }
 
+  //Metodo que gestiona el menu
   void iniciar() {
     bool continuar = true;
     while (continuar) {

@@ -3,6 +3,7 @@ import 'dart:io';
 import '../Model/Categoria.dart';
 
 class Categoriaview {
+  // Función que lista las categorías  en pantalla
   void menu(List<Categoria> categorias) {
     print('\n ----------------- Selecciona Categoria-----------------------');
     for (Categoria categoria in categorias) {
@@ -10,6 +11,7 @@ class Categoriaview {
     }
   }
 
+  //Función que captura que solicita y captura la selección de la categoria que hizo el usuario
   Categoria seleccionarCategoria(List<Categoria> categorias) {
     while (true) {
       stdout.write('Seleccione una categoría (ingrese un número): ');

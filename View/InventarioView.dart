@@ -3,6 +3,7 @@ import 'dart:io';
 import '../Model/Producto.dart';
 
 class Inventarioview {
+  //Funcion que muestra al usuario las opciones del programa
   void menuInventario() {
     print('\n ----------------- Menu Inventario -----------------');
     print('1. Agregar Producto');
@@ -13,6 +14,7 @@ class Inventarioview {
     print('6. Salir');
   }
 
+  //Funcion que solicita y captura las entradas por teclado que hizo el usuario
   String solicitarDato(String texto) {
     stdout.write(texto);
     try {
@@ -23,10 +25,12 @@ class Inventarioview {
     }
   }
 
+  // Funcion que muestra por consolo un mensaje al usuario
   void mensaje(String texto) {
     print(texto);
   }
 
+  //Funcion que muestra todos los productos registrados
   void listarProductos(List<Producto> inventario) {
     if (inventario.isEmpty) {
       mensaje('No hay productos en el inventario');
@@ -38,11 +42,7 @@ class Inventarioview {
     }
   }
 
-  void getProducto(Producto producto) {
-    mensaje('Producto encontrado:');
-    print(producto.toString());
-  }
-
+  //Esta funcion nos ayuda a determinar si el usuario desea continuar agregando, actualizando o buscando
   bool preguntaContinuar(String mensaje) {
     var respuesta = '';
     do {
@@ -51,8 +51,4 @@ class Inventarioview {
     } while (respuesta.toLowerCase() != 's' && respuesta.toLowerCase() != 'n');
     return respuesta == 's';
   }
-
-  // void limpiarConsola() {
-  //   Process.runSync('clear', []);
-  // }
 }
