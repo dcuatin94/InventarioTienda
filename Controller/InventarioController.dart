@@ -16,7 +16,7 @@ class Inventariocontroller {
     Categoria(id: 3, nombre: 'Ropa'),
     Categoria(id: 4, nombre: 'Hogar'),
   ];
-  //Funcion para agregar Productos a la lista
+  //Medoto para agregar Productos a la lista
   void agregarProducto() {
     bool continuar = true;
     Categoriaview categoriaview = Categoriaview();
@@ -40,7 +40,7 @@ class Inventariocontroller {
     }
   }
 
-  //Funcion para actualizar el stock
+  //Método para actualizar el stock
   void actualizarProducto() {
     bool continuar = true;
     if (productos.length > 0) {
@@ -66,7 +66,7 @@ class Inventariocontroller {
     }
   }
 
-  //Mostrar todos los productos ingresados
+  //Método que muestra todos los productos ingresados
   void listarProductos() {
     vista.listarProductos(productos);
   }

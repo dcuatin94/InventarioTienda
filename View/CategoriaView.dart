@@ -3,7 +3,7 @@ import 'dart:io';
 import '../Model/Categoria.dart';
 
 class Categoriaview {
-  // Función que lista las categorías  en pantalla
+  // Metodo que lista las categorías  en pantalla
   void menu(List<Categoria> categorias) {
     print('\n ----------------- Selecciona Categoria-----------------------');
     for (Categoria categoria in categorias) {
